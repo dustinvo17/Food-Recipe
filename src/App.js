@@ -24,7 +24,7 @@ class App extends React.Component {
                 <form className="ui segment" onSubmit={(e) => this.onSubmit(e)}>
                     <div className="ui input focus massive icon">
                         <input placeholder="Search food..." onChange={e => this.onInputChange(e)}/>
-                        <i class="search icon"></i>
+                        <i className="search icon"></i>
                     </div>
 
                 </form>
@@ -37,6 +37,6 @@ class App extends React.Component {
 }
 const mapStateToProps = (state, ownProps) => {
 
-    return {userInput: state.storeInput, recipes: state.fetchRecipe, clearInput: state.clearInput}
+    return {userInput: state.storeInput, recipes: state.fetchRecipe}
 }
 export default connect(mapStateToProps, {storeInput, fetchRecipe})(App)
