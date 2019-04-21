@@ -4,8 +4,8 @@ export const fetchRecipe = () => async(dispatch, getState) => {
     const response = await api.get('/search', {
         params: {
             q: userInput,
-            app_id: "b9276d86",
-            app_key: "d451446f8723e11ecf53c2b6384890c4"
+            app_id: "78135600",
+            app_key: "6d0c8af40ccb3cd8b3fa80098dbfbf27"
         }
     })
     dispatch({type: "FETCH_RECIPE", payload: response.data})
