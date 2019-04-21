@@ -21,7 +21,7 @@ class RenderRecipe extends React.Component {
             return (
                 <div className="card" key={calories}>
                     <div className="ui image">
-                        <img src={image}/>
+                        <img src={image} alt={label}/>
                     </div>
 
                     <div className="content">
