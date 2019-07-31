@@ -1,0 +1,48 @@
+.navbar {
+    padding: 0 3rem;
+    display:flex;
+    justify-content: flex-start;
+    font-weight:900 !important;
+}
+.left {
+    margin-right:auto;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+   
+}
+.phone-icon{
+    margin-right:3rem;
+}
+.product-list {
+    list-style: none;
+    
+    display:flex;
+    
+    font-size: 1.7rem;
+    flex-direction: column;
+    justify-content: center;
+
+}
+.product {
+    text-transform: capitalize;
+}
+
+
+.cart{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size:2rem;
+    padding:1rem;
+    border:2px solid;
+    border-radius:1rem;
+    margin:0.5rem 0;
+    
+}
+
+.cart-text{
+    margin-left:1rem;
+    text-transform: capitalize;
+    
+}

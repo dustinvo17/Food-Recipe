@@ -1,10 +1,10 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import App from './App'
-import {Provider} from 'react-redux'
-import {createStore, applyMiddleware} from 'redux'
-import reducers from './reducers'
-import ReduxThunk from 'redux-thunk'
-const store = createStore(reducers, applyMiddleware(ReduxThunk))
-ReactDOM.render(
-    <Provider store={store}><App/></Provider>, document.querySelector('#root'))
+import {BrowserRouter as Router} from 'react-router-dom'
+import {ProductProvider} from './context'
+ReactDOM.render(<ProductProvider>
+    <Router>
+        <App/>
+     </Router>
+    </ProductProvider>,document.querySelector('#root'))

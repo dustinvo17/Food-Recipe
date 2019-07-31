@@ -1,42 +1,30 @@
 import React from 'react'
-import {connect} from 'react-redux'
-import {storeInput, fetchRecipe} from './actions'
-import RenderRecipe from './RenderRecipe'
+import {Switch,Route} from 'react-router-dom'
+
+import './App.css'
+
+import Navbar from './components/Navbar'
+import ProductList from './components/ProductList'
+import Details from './components/Details'
+import Cart from './components/Cart/Cart'
+import Default from './components/Default'
+import Modal from './components/Modal'
 class App extends React.Component {
-    onSubmit = (e) => {
-        e.preventDefault()
-        this
-            .props
-            .fetchRecipe()
-
-    }
-    onInputChange = e => {
-        this
-            .props
-            .storeInput(e.target.value)
-    }
-
-    render() {
-
+    render(){
         return (
-            <div >
-
-                <form className="ui segment" onSubmit={(e) => this.onSubmit(e)}>
-                    <div className="ui input focus massive icon">
-                        <input placeholder="Search food..." onChange={e => this.onInputChange(e)}/>
-                        <i className="search icon"></i>
-                    </div>
-
-                </form>
-
-                <RenderRecipe recipes={this.props.recipes}/>
-            </div>
-
+            <React.Fragment>
+                <Navbar/>
+                <Switch>
+                    <Route path='/' exact component={ProductList}/>
+                    <Route path='/details' component={Details}/>
+                    <Route path='/cart' component={Cart}/> 
+                    <Route component={Default}/>
+                </Switch>
+                <Modal />
+              
+            </React.Fragment>
+          
         )
     }
 }
-const mapStateToProps = (state, ownProps) => {
-
-    return {userInput: state.storeInput, recipes: state.fetchRecipe}
-}
-export default connect(mapStateToProps, {storeInput, fetchRecipe})(App)
+export default App
