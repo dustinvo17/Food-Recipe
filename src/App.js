@@ -9,8 +9,10 @@ import Details from './components/Details'
 import Cart from './components/Cart/Cart'
 import Default from './components/Default'
 import Modal from './components/Modal'
+
 class App extends React.Component {
     render(){
+        console.log(process.env.REACT_APP_APP_ID)
         return (
             <React.Fragment>
                 <Navbar/>

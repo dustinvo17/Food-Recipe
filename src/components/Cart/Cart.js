@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import Title from '../Title'
 import CartColumns from './CartColumns'
+import PayPalButton from './PayPalButton'
+import history from '../history'
 
 import {ProductConsumer} from '../../context'
 export default class componentName extends Component {
@@ -39,7 +41,7 @@ export default class componentName extends Component {
                                          <div className="item">TAX : ${cartTax}</div>
                                          <div className="item">TOTAL : ${cartTotal}</div>
                                          
-                                        
+                                        <PayPalButton className="item" total={cartTotal} clearCart={clearCart} history={history}/>
                                     </div>
                                   </div>
                                     
